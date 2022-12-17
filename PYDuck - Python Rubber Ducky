@@ -1,0 +1,27 @@
+***PYDuck - Python Rubber Ducky (Windows version)***
+
+# pip install keyboard #
+
+from keyboard import press_and_release, write
+from os import getcwd
+from time import sleep
+from getpass import getuser
+
+user_name = getuser()
+current_dir = getcwd()
+
+press_and_release("Left Windows + R")
+sleep(0.2)
+write("cmd")
+press_and_release("Enter")
+sleep(0.5)
+
+# example - create a text file one the user's desktop and 
+command = [f"start {current_dir}\music\{music_file}.mp3",
+            f"echo Sorry, GG... ;) > C:\\Users\\{user_name}\\Desktop\\file.txt",
+            f"start C:\\Users\\{user_name}\\Desktop\\file.txt",
+            "exit"]
+
+for cmd in command:
+    write(cmd)
+    press_and_release("Enter").
